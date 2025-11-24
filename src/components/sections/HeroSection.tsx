@@ -53,7 +53,7 @@ const HeroSection = () => {
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight animate-fade-in-up">
             <span className="uppercase text-cosmic-gradient glow-cosmic">Milanoir Events</span>
           </h1>
-          <p className="uppercase tracking-[0.4em] text-lg md:text-xl text-primary">
+          <p className="uppercase tracking-[0.4em] text-lg md:text-xl text-primary text-black">
             Premier Event Production for Artists and Performers
           </p>
           <div className="pt-5 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
@@ -65,15 +65,6 @@ const HeroSection = () => {
               Join the Waitlist
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-          </div>
-
-          <div className="pt-5 animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
-            <div className="inline-block relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent blur-xl opacity-50 animate-glow-pulse" />
-              <p className="relative text-xl md:text-2xl font-bold uppercase tracking-wider text-cosmic-gradient glow-cosmic px-6 py-2 border border-primary/30 rounded-lg bg-card/30 backdrop-blur-sm">
-                Launching Soon
-              </p>
-            </div>
           </div>
 
           {/* <p
@@ -97,10 +88,11 @@ const HeroSection = () => {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/60 rounded-full flex items-start justify-center p-2 backdrop-blur-md bg-white/10">
-          <div className="w-1.5 h-3 bg-white rounded-full animate-pulse" />
-        </div>
+        <div className="w-6 h-10 border-2 border-green-500 rounded-full flex items-start justify-center p-2 backdrop-blur-md bg-white/10">
+        <div className="w-1.5 h-3 bg-green-500 rounded-full animate-pulse" />
       </div>
+      </div>
+
     </section>
   );
 };

@@ -27,11 +27,9 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Instagram, href: "https://instagram.com/milanoir", label: "Instagram" },
-  { icon: Facebook, href: "https://facebook.com/milanoir", label: "Facebook" },
-  { icon: Twitter, href: "https://twitter.com/milanoir", label: "Twitter" },
-  { icon: Linkedin, href: "https://linkedin.com/company/milanoir", label: "LinkedIn" },
-  { icon: Youtube, href: "https://youtube.com/@milanoir", label: "YouTube" },
+  { icon: Instagram, href: "https://www.instagram.com/milanoirevents/#", label: "Instagram" },
+  { icon: Facebook, href: "https://facebook.com/milanoirevents", label: "Facebook" },
+  { icon: Twitter, href: "https://twitter.com/milanoirevents", label: "Twitter" },
 ];
 
 export default function Footer() {
