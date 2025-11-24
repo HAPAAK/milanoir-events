@@ -1,0 +1,55 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+export default function PageLoader() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [isFading, setIsFading] = useState(false);
+
+  useEffect(() => {
+    // Start fade out after 2 seconds
+    const fadeTimer = setTimeout(() => {
+      setIsFading(true);
+    }, 1500); // 2 seconds
+
+    // Remove loader after fade completes
+    const removeTimer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3500); // 2s display + 1.5s fade
+
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(removeTimer);
+    };
+  }, []);
+
+  if (!isLoading) return null;
+
+  return (
+    <div
+      className={`fixed inset-0 z-[100] flex items-center justify-center bg-background transition-opacity duration-1500 ${
+        isFading ? "opacity-0 pointer-events-none" : "opacity-100"
+      }`}
+    >
+      <div className="w-fit font-bold text-transparent leading-[1.5] animate-wave wave-loader"></div>
+
+      {/* CSS for wave loader styling */}
+      <style jsx>{`
+        .wave-loader {
+          font-size: clamp(3rem, 8vw, 6rem);
+          -webkit-text-stroke: 2px hsl(75, 20%, 40%);
+          text-stroke: 2px hsl(75, 20%, 40%);
+          background:
+            radial-gradient(1.13em at 50% 1.6em, hsl(75, 30%, 50%) 99%, transparent 101%) calc(50% - 1.6em) 0/3.2em 100% text,
+            radial-gradient(1.13em at 50% -0.8em, transparent 99%, hsl(75, 30%, 50%) 101%) 50% .8em/3.2em 100% repeat-x text;
+          -webkit-background-clip: text;
+          background-clip: text;
+        }
+
+        .wave-loader:before {
+          content: "milanoir";
+        }
+      `}</style>
+    </div>
+  );
+}
