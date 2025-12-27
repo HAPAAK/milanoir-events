@@ -1,0 +1,115 @@
+.cardContainer {
+  perspective: 1000px;
+  min-height: 350px;
+  height: 100%;
+  cursor: pointer;
+}
+
+.cardFlip {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform-style: preserve-3d;
+}
+
+.cardFlip.flipped {
+  transform: rotateY(180deg);
+}
+
+.cardFace {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(30, 30, 45, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.cardFront {
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.cardBack {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.2) 0%, rgba(224, 79, 240, 0.1) 100%);
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 8px 32px rgba(168, 85, 247, 0.3), inset 0 0 20px rgba(168, 85, 247, 0.1);
+  gap: 1rem;
+}
+
+.iconContainerBack {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  background-color: rgba(168, 85, 247, 0.3);
+  transition: all 0.3s ease;
+}
+
+.cardBack:hover .iconContainerBack {
+  background-color: rgba(168, 85, 247, 0.4);
+}
+
+.iconBack {
+  width: 2rem;
+  height: 2rem;
+  color: #a855f7;
+}
+
+.iconContainer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background-color: rgba(168, 85, 247, 0.2);
+  transition: all 0.3s ease;
+}
+
+.cardFace:hover .iconContainer {
+  background-color: rgba(168, 85, 247, 0.3);
+}
+
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #a855f7;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.animation {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

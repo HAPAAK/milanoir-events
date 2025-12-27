@@ -1,0 +1,223 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4rem;
+  background: linear-gradient(-45deg, #1b2735, #090a0f, #1b2735, #090a0f);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding-top: 5rem;
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: transparent;
+  overflow: hidden;
+}
+
+/* Music waves background (layered subtle waves using gradients) */
+.musicWaves {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.musicWaves::before,
+.musicWaves::after {
+  content: "";
+  position: absolute;
+  left: -25%;
+  width: 150%;
+  height: 40%;
+  bottom: -5%;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  transform: translate3d(0,0,0);
+  mix-blend-mode: screen;
+}
+
+.musicWaves::before {
+  background: radial-gradient(ellipse at center, rgba(168,85,247,0.10), rgba(236,72,153,0.02) 55%, transparent 60%);
+  animation: waveMove 14s linear infinite;
+}
+
+.musicWaves::after {
+  bottom: -20%;
+  height: 60%;
+  background: linear-gradient(90deg, rgba(168,85,247,0.06), rgba(236,72,153,0.04));
+  opacity: 0.5;
+  animation: waveMove 22s linear infinite reverse;
+}
+
+@keyframes waveMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-20%); }
+}
+
+/* Floating music note elements (spawned by JS on hover/mousemove) */
+.musicNote {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: 1.25rem;
+  color: #ec4899; /* pink accent */
+  text-shadow: 0 6px 18px rgba(168,85,247,0.5);
+  pointer-events: none;
+  animation: floatUp 1100ms cubic-bezier(.2,.9,.2,1) forwards;
+  z-index: 60;
+}
+
+@keyframes floatUp {
+  0% { opacity: 1; transform: translate(-50%, -50%) translateY(0) scale(1); }
+  60% { opacity: 0.9; transform: translate(-50%, -150%) translateY(-40px) scale(1.08) rotate(-6deg); }
+  100% { opacity: 0; transform: translate(-50%, -240%) translateY(-90px) scale(1.18) rotate(-12deg); }
+}
+
+.hero.hovering .title,
+.hero.hovering .subtitle {
+  transition: transform 0.35s ease, filter 0.35s ease;
+  transform: translateY(-6px);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), transparent, rgba(0, 0, 0, 0.2));
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 4rem);
+  padding: 2rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .content {
+    min-height: calc(100vh - 6rem);
+  }
+}
+
+.textContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: -2.5rem;
+}
+
+@media (min-width: 768px) {
+  .textContainer {
+    gap: 2rem;
+    margin-top: -4rem;
+  }
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: -0.02em;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 4.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 5rem;
+  }
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: #3b82f6;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+@media (min-width: 768px) {
+  .subtitle {
+    font-size: 1.25rem;
+  }
+}
+
+.buttonContainer {
+  padding-top: 1.25rem;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+  background-color: rgba(59, 130, 246, 0.9);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+.button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: scale(1);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

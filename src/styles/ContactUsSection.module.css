@@ -1,0 +1,354 @@
+.section {
+  position: relative;
+  padding: 4rem 1rem;
+  margin-bottom: 6rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 5rem 1rem;
+    margin-bottom: 8rem;
+  }
+}
+
+.glow1 {
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  width: 480px;
+  height: 480px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.25), transparent);
+  filter: blur(160px);
+}
+
+.glow2 {
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  top: 6rem;
+  right: 3rem;
+  width: 256px;
+  height: 256px;
+  border-radius: 50%;
+  background: rgba(224, 79, 240, 0.15);
+  filter: blur(120px);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@media (min-width: 768px) {
+  .header {
+    margin-bottom: 5rem;
+    gap: 2rem;
+  }
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3.75rem;
+  }
+}
+
+.titleGradient {
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Form Styles */
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.formBox {
+  position: relative;
+  border-radius: 1rem;
+  background-color: rgba(30, 30, 45, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 60px rgba(15, 15, 30, 0.45);
+  backdrop-filter: blur(80px);
+  padding: 2rem;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  padding-top: 3px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: white;
+  display: block;
+}
+
+.labelRequired {
+  color: #a855f7;
+}
+
+.labelOptional {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.75rem;
+}
+
+.input {
+  height: 52px;
+  padding: 0 1rem;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  color: white;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.input:focus {
+  outline: none;
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.1);
+}
+
+.input.error {
+  border-color: #ff4444;
+}
+
+.textarea {
+  height: 100px;
+  padding: 0.75rem 1rem;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  color: white;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  resize: none;
+  font-family: inherit;
+}
+
+.textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.1);
+}
+
+.errorText {
+  font-size: 0.875rem;
+  color: #ff4444;
+}
+
+.submitButton {
+  margin-top: 5px;
+  height: 52px;
+  width: 100%;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.submitButton:hover:not(:disabled) {
+  opacity: 0.95;
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.submitIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.submitButton:hover .submitIcon {
+  transform: translateX(4px);
+}
+
+.formInfo {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Contact Info Section */
+.contactSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: fadeInUp 0.8s ease-out 0.1s both;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .contactGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.contactCard {
+  position: relative;
+  border-radius: 0.75rem;
+  background-color: rgba(30, 30, 45, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 1rem;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.contactCard:hover {
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+  background-color: rgba(30, 30, 45, 0.5);
+}
+
+.contactCardGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.05), transparent, rgba(224, 79, 240, 0.05));
+  border-radius: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contactCard:hover .contactCardGradient {
+  opacity: 1;
+}
+
+.contactCardContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.iconBox {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background-color: rgba(168, 85, 247, 0.2);
+  flex-shrink: 0;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactCard:hover .iconBox {
+  background-color: rgba(168, 85, 247, 0.4);
+}
+
+.contactTitle {
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.contactInfo {
+  width: 100%;
+}
+
+.contactDetails {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+.mapContainer {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(30, 30, 45, 0.4);
+  backdrop-filter: blur(10px);
+  height: 320px;
+}
+
+.mapContainer iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

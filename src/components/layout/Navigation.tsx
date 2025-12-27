@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
-import logoImage from "../../../public/milanoir-logo.jpg";
+import logoImage from "../../../public/milanoir-logo.png";
+import styles from "@/styles/Navigation.module.css";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -36,81 +37,75 @@ const Navigation = () => {
 
   return (
     <>
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? "bg-background/95 backdrop-blur-lg border-b border-border/50 shadow-lg"
-            : "bg-transparent"
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 py-3">
-          <div className="flex items-center justify-between">
-            {/* <a
-              href="#home"
-              className="flex items-center"
-              onClick={(event) => {
-                event.preventDefault();
-                handleNavClick("#home");
-              }}
-            >
-              <Image
-                src={logoImage}
-                alt="Milanoir Events"
-                height={logoImage.height}
-                width={logoImage.width}
-                className="h-12 w-auto"
-                priority
-              />
-            </a> */}
-
-            <div className="hidden md:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={(event) => {
-                    event.preventDefault();
-                    handleNavClick(link.href);
-                  }}
-                  className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-
-            <button
-              onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-              className="md:hidden p-2 text-foreground"
-              aria-label="Toggle menu"
-            >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+      <nav className={`${styles.nav} ${isScrolled ? styles.scrolled : ""}`}>
+        <div className={styles.container}>
+          {/* Desktop Navigation Links */}
+          <div className={styles.navLinksDesktop}>
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(event) => {
+                  event.preventDefault();
+                  handleNavClick(link.href);
+                }}
+                className={styles.navLink}
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
+
+          {/* Logo */}
+          <a
+            href="#home"
+            className={styles.logo}
+            onClick={(event) => {
+              event.preventDefault();
+              handleNavClick("#home");
+            }}
+          >
+            <Image
+              src={logoImage}
+              alt="Milanoir Events"
+              height={logoImage.height}
+              width={logoImage.width}
+              priority
+            />
+          </a>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+            className={styles.mobileMenuButton}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
 
-        {isMobileMenuOpen && (
-          <div className="md:hidden bg-background/95 backdrop-blur-lg border-t border-border/50 animate-fade-in">
-            <div className="px-4 py-6 space-y-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={(event) => {
-                    event.preventDefault();
-                    handleNavClick(link.href);
-                  }}
-                  className="block text-base font-medium text-foreground/80 hover:text-primary transition-colors py-2"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
+        {/* Mobile Menu */}
+        <div className={`${styles.mobileMenu} ${isMobileMenuOpen ? styles.open : ""}`}>
+          <div className={styles.mobileLinkContainer}>
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(event) => {
+                  event.preventDefault();
+                  handleNavClick(link.href);
+                }}
+                className={styles.mobileLink}
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
-        )}
+        </div>
       </nav>
     </>
   );
 };
 
 export default Navigation;
+

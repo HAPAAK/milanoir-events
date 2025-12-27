@@ -3,6 +3,7 @@ import AboutSection from "@/components/sections/AboutSection";
 import VisionSection from "@/components/sections/VisionSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import WaitlistSection from "@/components/sections/WaitlistSection";
+import ContactUsSection from "@/components/sections/ContactUsSection";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <VisionSection />
       <FeaturesSection />
       <WaitlistSection />
+      <ContactUsSection />
     </div>
   );
 }

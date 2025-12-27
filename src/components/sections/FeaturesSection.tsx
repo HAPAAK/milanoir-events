@@ -2,6 +2,7 @@
 
 import FeatureCard from "@/components/cards/FeatureCard";
 import { Music, Users, Zap, Calendar, Globe, Sparkles } from "lucide-react";
+import styles from "@/styles/FeaturesSection.module.css";
 
 const features = [
   {
@@ -43,21 +44,18 @@ const features = [
 ];
 
 const FeaturesSection = () => (
-  <section id="features" className="relative px-4 pt-16 pb-20 md:pt-20 md:pb-24">
-    <div className="max-w-7xl mx-auto">
-      <div className="text-center mb-12 md:mb-16 space-y-6">
-        <h2 className="text-4xl md:text-6xl font-bold animate-fade-in-up">
-          <span className="text-cosmic-gradient">What Makes Us Unique</span>
+  <section id="features" className={styles.section}>
+    <div className={styles.container}>
+      <div className={styles.header}>
+        <h2 className={styles.title}>
+          <span className={styles.titleGradient}>What Makes Us Unique</span>
         </h2>
-        <p
-          className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-in-up"
-          style={{ animationDelay: "0.1s" }}
-        >
+        <p className={styles.subtitle}>
           Every event is a masterpiece, crafted with passion, precision, and an unwavering commitment to excellence.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className={styles.grid}>
         {features.map((feature, index) => (
           <FeatureCard
             key={feature.title}

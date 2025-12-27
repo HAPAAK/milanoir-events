@@ -8,46 +8,58 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "A valid email is required." }, { status: 400 });
     }
 
-    const apiKey = process.env.RESEND_API_KEY;
-    const audienceId = process.env.RESEND_AUDIENCE_ID;
-
-    if (!apiKey || !audienceId) {
-      return NextResponse.json(
-        { error: "Resend configuration is missing on the server." },
-        { status: 500 }
-      );
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return NextResponse.json({ error: "Invalid email address." }, { status: 400 });
     }
 
-    const response = await fetch(
-      `https://api.resend.com/audiences/${audienceId}/contacts`,
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          unsubscribed: false,
-        }),
+    const resendApiKey = process.env.RESEND_API_KEY;
+    const segmentId = process.env.RESEND_SEGMENT_ID;
+    
+    if (!resendApiKey) {
+      return NextResponse.json({ success: false }, { status: 400 });
+    }
+
+    if (!segmentId) {
+      return NextResponse.json({ success: false }, { status: 400 });
+    }
+
+    // Step 1: Add contact to Resend
+    const createContactResponse = await fetch('https://api.resend.com/contacts', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${resendApiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: email
+      }),
+    });
+    
+    const addSegmentResponse = await fetch(`https://api.resend.com/contacts/${email}/segments/${segmentId}`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${resendApiKey}`,
+        'Content-Type': 'application/json',
       }
-    );
+});
 
-    if (!response.ok) {
-      const errorBody = await response.json().catch(() => null);
-      return NextResponse.json(
-        { error: errorBody?.message ?? "Unable to add email to waitlist." },
-        { status: response.status }
-      );
+    if (!addSegmentResponse.ok) {
+      const errorData = await addSegmentResponse.text();
+      return NextResponse.json({ success: false }, { status: 400 });
     }
 
-    return NextResponse.json({ success: true });
+    let segmentData = {};
+    try {
+      segmentData = await addSegmentResponse.json();
+    } catch {
+      // Response was ok but not JSON, which is fine
+    }
+
+    return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
-    console.error("Waitlist signup failed:", error);
-    return NextResponse.json(
-      { error: "Unexpected error while processing the waitlist request." },
-      { status: 500 }
-    );
+    return NextResponse.json({ success: false }, { status: 400 });
   }
 }
 
