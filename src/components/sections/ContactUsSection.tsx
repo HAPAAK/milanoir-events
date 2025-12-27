@@ -227,7 +227,7 @@ const ContactUsSection = () => {
                 <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d9936.972674191655!2d0.06548!3d51.490405!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTHCsDI5JzI1LjUiTiAwwrAwMyc1NS43IkU!5e0!3m2!1sen!2sus!4v1766829843977!5m2!1sen!2sus" 
                 width="600" 
                 height="450" 
-                allowFullScreen="" 
+                allow="fullscreen" 
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade">
                 </iframe>
