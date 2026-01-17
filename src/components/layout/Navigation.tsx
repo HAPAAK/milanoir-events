@@ -12,6 +12,7 @@ const navLinks = [
   { label: "Vision", href: "#vision" },
   { label: "Features", href: "#features" },
   { label: "Waitlist", href: "#waitlist" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const Navigation = () => {

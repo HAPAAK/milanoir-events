@@ -115,10 +115,10 @@ const ContactUsSection = () => {
         {/* Header */}
         <div className={styles.header}>
           <h2 className={styles.title}>
-            <span className={styles.titleGradient}>Let's Create Something Extraordinary</span>
+            <span className={styles.titleGradient}>Let&lsquo;s Create Something Extraordinary</span>
           </h2>
           <p className={styles.subtitle}>
-            Have a vision? Let's bring it to life together. Reach out to discuss your next big event.
+            Have a vision? Let&lsquo;s bring it to life together. Reach out to discuss your next big event.
           </p>
         </div>
 
@@ -204,17 +204,32 @@ const ContactUsSection = () => {
                   <div
                     key={info.title}
                     className={styles.contactCard}
-                    onClick={() => handleCopyToClipboard(info.details, info.title)}
                   >
                     <div className={styles.contactCardGradient} />
-                    
+
                     <div className={styles.contactCardContent}>
                       <div className={styles.iconBox}>
                         <Icon size={24} color="#a855f7" />
                       </div>
                       <div className={styles.contactInfo}>
                         <h4 className={styles.contactTitle}>{info.title}</h4>
-                        <p className={styles.contactDetails}>{info.details}</p>
+                        {info.title === "Email" ? (
+                          <a href={`mailto:${info.details}`} className={styles.contactDetails}>
+                            {info.details}
+                          </a>
+                        ) : info.title === "Phone" ? (
+                          <a href={`tel:${info.details}`} className={styles.contactDetails}>
+                            {info.details}
+                          </a>
+                        ) : (
+                          <p
+                            className={styles.contactDetails}
+                            onClick={() => handleCopyToClipboard(info.details, info.title)}
+                            style={{ cursor: "pointer" }}
+                          >
+                            {info.details}
+                          </p>
+                        )}
                       </div>
                     </div>
                   </div>

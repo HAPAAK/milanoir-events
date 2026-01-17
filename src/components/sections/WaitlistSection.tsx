@@ -125,7 +125,7 @@ const WaitlistSection = () => {
                 <ArrowRight className={styles.submitIcon} />
               </button>
             </div>
-            <p className={styles.formInfo}>We'll only email you about upcoming events and special offers.</p>
+            <p className={styles.formInfo}>We will only email you about upcoming events and special offers.</p>
           </form>
         </div>
 

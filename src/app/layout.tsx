@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
-import ScrollToTop from "@/components/ui/ScrollToTop";
 import PageLoader from "@/components/ui/PageLoader";
 import { ToastProvider } from "@/hooks/use-toast";
 
@@ -26,7 +25,6 @@ export default function RootLayout({
             <main className="relative z-10">{children}</main>
           </div>
           <Footer />
-          <ScrollToTop />
         </ToastProvider>
       </body>
     </html>
