@@ -14,6 +14,7 @@ const Navigation = () => {
     { label: messages.navigation.links.about, href: "#about" },
     { label: messages.navigation.links.vision, href: "#vision" },
     { label: messages.navigation.links.features, href: "#features" },
+    { label: messages.navigation.links.artists, href: "#artists" },
     { label: messages.navigation.links.waitlist, href: "#waitlist" },
     { label: messages.navigation.links.contact, href: "#contact" },
   ];

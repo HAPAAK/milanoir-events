@@ -9,6 +9,7 @@
       "about": "About",
       "vision": "Vision",
       "features": "Features",
+      "artists": "Artists",
       "waitlist": "Waitlist",
       "contact": "Contact"
     },
@@ -34,6 +35,32 @@
   "vision": {
     "title": "Our Vision",
     "body": "We believe live events are where an artist's vision becomes reality. Too often, that vision is compromised by poor sound, lighting, or logistics. Milanoir exists to change that narrative. We are a full-service production and management studio devoted to crafting flawless, powerful, and unforgettable experiences for artists and audiences alike."
+  },
+  "artists": {
+    "title": "Featured Artists",
+    "subtitle": "Meet the voices shaping the future of music",
+    "featured": [
+      {
+        "name": "Mr. D",
+        "realName": "Sandip Bista",
+        "genre": "Rap / Hip-Hop",
+        "bio": "From the streets of Hetauda to stages across Nepal and beyond, Mr. D is a lyrical force who blends raw emotion with razor-sharp storytelling. His tracks like Gobar Lyath and Bandai Cha Nepal speak truth to power, making him a voice for the unheard and a rebel with rhythm.",
+        "image": "/mr_d.jpeg"
+      },
+      {
+        "name": "Sacar aka Lil Buddha",
+        "realName": "Saakar Adhikari",
+        "genre": "Hip-Hop / Rap",
+        "bio": "Kathmandu-born and Sydney-based, Lil Buddha is a bilingual rap phenom known for his fiery freestyles and authentic storytelling. His music bridges cultures and continents, delivering powerful narratives that resonate with audiences worldwide.",
+        "image": "/sacar.jpeg"
+      }
+    ],
+    "upcoming": {
+      "title": "Upcoming Artist",
+      "genre": "Experimental / Soulful Rap",
+      "bio": "There's a presence that doesn't shout—it resonates. A voice that feels like dusk and dawn colliding. When he steps in, the energy shifts. You won't find him chasing the spotlight, but when the beat drops, it finds him. Cryptic. Cosmic. Calm. And yet, unforgettable.",
+      "image": "/upcoming_surprise.jpeg"
+    }
   },
   "features": {
     "title": "What Makes Us Unique",

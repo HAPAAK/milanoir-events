@@ -9,6 +9,7 @@
       "about": "About",
       "vision": "Vision",
       "features": "Features",
+      "artists": "Artistas",
       "waitlist": "Waitlist",
       "contact": "Contact"
     },
@@ -34,6 +35,32 @@
   "vision": {
     "title": "Our Vision",
     "body": "We believe live events are where an artist's vision becomes reality. Too often, that vision is compromised by poor sound, lighting, or logistics. Milanoir exists to change that narrative. We are a full-service production and management studio devoted to crafting flawless, powerful, and unforgettable experiences for artists and audiences alike."
+  },
+  "artists": {
+    "title": "Artistas Destacados",
+    "subtitle": "Conoce las voces que moldean el futuro de la música",
+    "featured": [
+      {
+        "name": "Mr. D",
+        "realName": "Sandip Bista",
+        "genre": "Rap / Hip-Hop",
+        "bio": "Desde las calles de Hetauda hasta los escenarios de Nepal y más allá, Mr. D es una fuerza lírica que combina emoción cruda con narrativa afilada. Sus canciones como Gobar Lyath y Bandai Cha Nepal hablan verdad al poder, convirtiéndolo en una voz para los no escuchados y un rebelde con ritmo.",
+        "image": "/mr_d.jpeg"
+      },
+      {
+        "name": "Sacar aka Lil Buddha",
+        "realName": "Saakar Adhikari",
+        "genre": "Hip-Hop / Rap",
+        "bio": "Nacido en Katmandú y radicado en Sídney, Lil Buddha es un fenómeno del rap bilingüe conocido por sus freestyles ardientes y narrativa auténtica. Su música une culturas y continentes, entregando narrativas poderosas que resuenan con audiencias en todo el mundo.",
+        "image": "/sacar.jpeg"
+      }
+    ],
+    "upcoming": {
+      "title": "Artista Próximo",
+      "genre": "Experimental / Soulful Rap",
+      "bio": "Hay una presencia que no grita—resuena. Una voz que se siente como el crepúsculo y el amanecer chocando. Cuando entra, la energía cambia. No lo encontrarás persiguiendo el centro de atención, pero cuando cae el ritmo, lo encuentra. Críptico. Cósmico. Calmo. Y sin embargo, inolvidable.",
+      "image": "/upcoming_surprise.jpeg"
+    }
   },
   "features": {
     "title": "What Makes Us Unique",
