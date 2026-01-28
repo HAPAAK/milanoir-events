@@ -4,26 +4,10 @@ import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import styles from "@/styles/ContactUsSection.module.css";
-
-const contactInfo = [
-  {
-    icon: Mail,
-    title: "Email",
-    details: "info@milanoir-events.com",
-  },
-  {
-    icon: Phone,
-    title: "Phone",
-    details: "+41 7887772745",
-  },
-  {
-    icon: MapPin,
-    title: "Location",
-    details: "Island Business Centre, 202, SE18 6PF, London",
-  },
-];
+import { useMessages } from "@/i18n/I18nProvider";
 
 const ContactUsSection = () => {
+  const messages = useMessages();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -33,18 +17,41 @@ const ContactUsSection = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
   const { toast } = useToast();
+  const contactInfo = [
+    {
+      key: "email",
+      icon: Mail,
+      title: messages.contact.info.email.title,
+      details: messages.contact.info.email.details,
+      link: `mailto:${messages.contact.info.email.details}`,
+    },
+    {
+      key: "phone",
+      icon: Phone,
+      title: messages.contact.info.phone.title,
+      details: messages.contact.info.phone.details,
+      link: `tel:${messages.contact.info.phone.details}`,
+    },
+    {
+      key: "location",
+      icon: MapPin,
+      title: messages.contact.info.location.title,
+      details: messages.contact.info.location.details,
+      link: null,
+    },
+  ];
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
     
     if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
+      newErrors.name = messages.contact.validation.nameRequired;
     }
     
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
+      newErrors.email = messages.contact.validation.emailRequired;
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email";
+      newErrors.email = messages.contact.validation.emailInvalid;
     }
     
     setErrors(newErrors);
@@ -54,8 +61,8 @@ const ContactUsSection = () => {
   const handleCopyToClipboard = (text: string, label: string) => {
     navigator.clipboard.writeText(text);
     toast({
-      title: "Copied!",
-      description: `${label} copied to clipboard`,
+      title: messages.contact.toast.copied.title,
+      description: `${label} ${messages.contact.toast.copied.descriptionSuffix}`,
     });
   };
 
@@ -64,8 +71,8 @@ const ContactUsSection = () => {
     
     if (!validateForm()) {
       toast({
-        title: "Please check your input",
-        description: "There are errors in the form",
+        title: messages.contact.toast.invalid.title,
+        description: messages.contact.toast.invalid.description,
       });
       return;
     }
@@ -84,13 +91,13 @@ const ContactUsSection = () => {
       });
       const data = await response.json().catch(() => ({}));
       if (!response.ok) {
-        throw new Error(data?.error ?? "Unable to submit the form right now.");
+        throw new Error(data?.error ?? messages.contact.toast.submitErrorFallback);
       }
 
       setSubmitted(true);
       toast({
-        title: "Message sent! 🚀",
-        description: "We'll get back to you soon.",
+        title: messages.contact.toast.success.title,
+        description: messages.contact.toast.success.description,
       });
       setFormData({ name: "", email: "", message: "" });
       setErrors({});
@@ -98,8 +105,8 @@ const ContactUsSection = () => {
       setTimeout(() => setSubmitted(false), 3000);
     } catch (error) {
       toast({
-        title: "Something went wrong",
-        description: error instanceof Error ? error.message : "Please try again in a moment.",
+        title: messages.contact.toast.error.title,
+        description: error instanceof Error ? error.message : messages.contact.toast.error.fallback,
       });
     } finally {
       setLoading(false);
@@ -115,10 +122,10 @@ const ContactUsSection = () => {
         {/* Header */}
         <div className={styles.header}>
           <h2 className={styles.title}>
-            <span className={styles.titleGradient}>Let&lsquo;s Create Something Extraordinary</span>
+            <span className={styles.titleGradient}>{messages.contact.title}</span>
           </h2>
           <p className={styles.subtitle}>
-            Have a vision? Let&lsquo;s bring it to life together. Reach out to discuss your next big event.
+            {messages.contact.subtitle}
           </p>
         </div>
 
@@ -130,11 +137,11 @@ const ContactUsSection = () => {
               {/* Name Field */}
               <div className={styles.fieldGroup}>
                 <label className={styles.label}>
-                  Full Name <span className={styles.labelRequired}>*</span>
+                  {messages.contact.labels.fullName} <span className={styles.labelRequired}>*</span>
                 </label>
                 <input
                   type="text"
-                  placeholder="Your name"
+                  placeholder={messages.contact.placeholders.name}
                   value={formData.name}
                   onChange={(e) => {
                     setFormData({ ...formData, name: e.target.value });
@@ -148,11 +155,11 @@ const ContactUsSection = () => {
               {/* Email Field */}
               <div className={styles.fieldGroup}>
                 <label className={styles.label}>
-                  Email Address <span className={styles.labelRequired}>*</span>
+                  {messages.contact.labels.email} <span className={styles.labelRequired}>*</span>
                 </label>
                 <input
                   type="email"
-                  placeholder="your@email.com"
+                  placeholder={messages.contact.placeholders.email}
                   value={formData.email}
                   onChange={(e) => {
                     setFormData({ ...formData, email: e.target.value });
@@ -166,10 +173,10 @@ const ContactUsSection = () => {
               {/* Message Field */}
               <div className={styles.fieldGroup}>
                 <label className={styles.label}>
-                  Message <span className={styles.labelOptional}>(Optional)</span>
+                  {messages.contact.labels.message} <span className={styles.labelOptional}>{messages.contact.labels.optional}</span>
                 </label>
                 <textarea
-                  placeholder="Tell us about your vision..."
+                  placeholder={messages.contact.placeholders.message}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className={styles.textarea}
@@ -183,7 +190,7 @@ const ContactUsSection = () => {
                 className={styles.submitButton}
               >
                 <span>
-                  {submitted ? "Message Sent!" : loading ? "Sending..." : "Send Message"}
+                  {submitted ? messages.contact.submit.sent : loading ? messages.contact.submit.loading : messages.contact.submit.cta}
                 </span>
                 <ArrowRight className={styles.submitIcon} />
               </button>
@@ -202,7 +209,7 @@ const ContactUsSection = () => {
                 const Icon = info.icon;
                 return (
                   <div
-                    key={info.title}
+                    key={info.key}
                     className={styles.contactCard}
                   >
                     <div className={styles.contactCardGradient} />
@@ -213,12 +220,8 @@ const ContactUsSection = () => {
                       </div>
                       <div className={styles.contactInfo}>
                         <h4 className={styles.contactTitle}>{info.title}</h4>
-                        {info.title === "Email" ? (
-                          <a href={`mailto:${info.details}`} className={styles.contactDetails}>
-                            {info.details}
-                          </a>
-                        ) : info.title === "Phone" ? (
-                          <a href={`tel:${info.details}`} className={styles.contactDetails}>
+                        {info.link ? (
+                          <a href={info.link} className={styles.contactDetails}>
                             {info.details}
                           </a>
                         ) : (

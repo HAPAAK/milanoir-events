@@ -39,6 +39,15 @@
   overflow: hidden;
 }
 
+.background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/nephop_2081_milanoir_events.avif") center/cover no-repeat;
+  filter: brightness(0.7) saturate(1.05);
+  z-index: 1;
+}
+
 /* Music waves background (layered subtle waves using gradients) */
 .musicWaves {
   position: absolute;
@@ -108,7 +117,7 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), transparent, rgba(0, 0, 0, 0.2));
-  z-index: 1;
+  z-index: 2;
 }
 
 .content {

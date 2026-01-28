@@ -5,17 +5,18 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import logoImage from "../../../public/milanoir-logo.png";
 import styles from "@/styles/Navigation.module.css";
-
-const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Vision", href: "#vision" },
-  { label: "Features", href: "#features" },
-  { label: "Waitlist", href: "#waitlist" },
-  { label: "Contact", href: "#contact" },
-];
+import { useMessages } from "@/i18n/I18nProvider";
 
 const Navigation = () => {
+  const messages = useMessages();
+  const navLinks = [
+    { label: messages.navigation.links.home, href: "#home" },
+    { label: messages.navigation.links.about, href: "#about" },
+    { label: messages.navigation.links.vision, href: "#vision" },
+    { label: messages.navigation.links.features, href: "#features" },
+    { label: messages.navigation.links.waitlist, href: "#waitlist" },
+    { label: messages.navigation.links.contact, href: "#contact" },
+  ];
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -68,7 +69,7 @@ const Navigation = () => {
           >
             <Image
               src={logoImage}
-              alt="Milanoir Events"
+              alt={messages.navigation.logoAlt}
               height={logoImage.height}
               width={logoImage.width}
               priority
@@ -79,7 +80,7 @@ const Navigation = () => {
           <button
             onClick={() => setIsMobileMenuOpen((prev) => !prev)}
             className={styles.mobileMenuButton}
-            aria-label="Toggle menu"
+            aria-label={messages.navigation.toggleMenuAria}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

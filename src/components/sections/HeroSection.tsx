@@ -1,10 +1,11 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
-import { ShootingStars } from "@/components/ui/ShootingStars";
 import styles from "@/styles/HeroSection.module.css";
+import { useMessages } from "@/i18n/I18nProvider";
 
 const HeroSection = () => {
+  const messages = useMessages();
   const scrollToWaitlist = () => {
     document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -13,7 +14,6 @@ const HeroSection = () => {
     <section id="home" className={styles.hero}>
       {/* Background with animation */}
       <div className={styles.background}>
-        <ShootingStars starCount={20} />
         <div className={styles.overlay} />
       </div>
 
@@ -22,18 +22,18 @@ const HeroSection = () => {
         <div className={styles.textContainer}>
           <h1 className={styles.title}>
             <span style={{ background: "linear-gradient(to right, #a855f7, #ec4899)", backgroundClip: "text", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-              Milanoir Events
+              {messages.hero.title}
             </span>
           </h1>
           <p className={styles.subtitle}>
-            Premier Event Production for Artists and Performers
+            {messages.hero.subtitle}
           </p>
           <div className={styles.buttonContainer}>
             <button
               onClick={scrollToWaitlist}
               className={styles.button}
             >
-              Join the Waitlist
+              {messages.hero.cta}
               <ArrowRight size={20} />
             </button>
           </div>

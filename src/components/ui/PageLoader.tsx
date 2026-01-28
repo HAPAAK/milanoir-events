@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useMessages } from "@/i18n/I18nProvider";
 
 export default function PageLoader() {
+  const messages = useMessages();
   const [isLoading, setIsLoading] = useState(true);
   const [isFading, setIsFading] = useState(false);
 
@@ -31,7 +33,10 @@ export default function PageLoader() {
         isFading ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
     >
-      <div className="w-fit font-bold text-transparent leading-[1.5] animate-wave wave-loader"></div>
+      <div
+        className="w-fit font-bold text-transparent leading-[1.5] animate-wave wave-loader"
+        data-text={messages.loader.text}
+      ></div>
 
       {/* CSS for wave loader styling */}
       <style jsx>{`
@@ -47,7 +52,7 @@ export default function PageLoader() {
         }
 
         .wave-loader:before {
-          content: "milanoir";
+          content: attr(data-text);
         }
       `}</style>
     </div>
