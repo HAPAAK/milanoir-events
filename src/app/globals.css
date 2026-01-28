@@ -1,25 +1,27 @@
 /* Font Face Definitions */
+/* Sora - For headers and titles */
 @font-face {
-  font-family: 'Telegraf';
-  src: url('/fonts/Telegraf-Regular.otf') format('otf');
-  font-weight: 400;
+  font-family: 'Sora';
+  src: url('/fonts/Sora/Sora-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter - For body copy */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Telegraf';
-  src: url('/fonts/Telegraf-Medium.otf') format('otf');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Telegraf';
-  src: url('/fonts/Telegraf-Bold.otf') format('otf');
-  font-weight: 700;
-  font-style: normal;
+  font-family: 'Inter';
+  src: url('/fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
   font-display: swap;
 }
 
@@ -29,72 +31,75 @@
 
 @layer base {
   :root {
-    /* Extra Dark Theme - Deep Black */
-    --background: 0 0% 0%;
+    /* Primary Colors */
+    /* Mature Blue - Background */
+    --background: 195 96% 11%; /* #012A38 */
     --foreground: 0 0% 100%;
-    --card: 240 10% 3%;
-    --card-foreground: 0 0% 100%;
-    --popover: 240 10% 3%;
-    --popover-foreground: 0 0% 100%;
-    /* Purple/Pink gradient primary */
-    --primary: 280 100% 65%;
+    /* Confident Orange - Primary */
+    --primary: 9 100% 50%; /* #FF3300 */
     --primary-foreground: 0 0% 100%;
-    /* Deep cosmic secondary */
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 100%;
-    /* Muted cosmic tones */
-    --muted: 0 0% 20%;
-    --muted-foreground: 0 0% 60%;
-    /* Bright Pink accent */
-    --accent: 320 100% 60%;
-    --accent-foreground: 0 0% 100%;
+    /* Brilliant Yellow - Accent (for H2 gradient) */
+    --accent: 72 96% 51%; /* #BFF90B */
+    --accent-foreground: 195 96% 11%;
+    /* Light Orange */
+    --light-orange: 8 100% 62%; /* #FF523B */
+    
+    /* Secondary Colors */
+    /* Clarity Ivory */
+    --secondary: 45 30% 83%; /* #E0DBC6 */
+    --secondary-foreground: 195 96% 11%;
+    /* Clarity White */
+    --clarity-white: 0 0% 94%; /* #EFEFEF */
+    /* Clarity Blue */
+    --clarity-blue: 185 25% 70%; /* #A2C1C4 */
+    
+    /* Neutral Colors */
+    /* Light Silver */
+    --muted: 200 10% 85%; /* #D3D9DC */
+    --muted-foreground: 0 0% 100% / 0.8; /* rgba(255, 255, 255, 0.8) */
+    /* Cadet Grey */
+    --cadet-grey: 200 12% 62%; /* #92A1A8 */
+    /* Storm Cloud */
+    --storm-cloud: 198 14% 36%; /* #4F6169 */
+    
+    /* UI Elements */
+    --card: 195 96% 13%;
+    --card-foreground: 0 0% 100%;
+    --popover: 195 96% 13%;
+    --popover-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 15%;
-    --input: 0 0% 10%;
-    --ring: 280 100% 65%;
+    --border: 198 14% 36%; /* Storm Cloud */
+    --input: 195 96% 15%;
+    --ring: 9 100% 50%; /* Confident Orange */
     --radius: 0.75rem;
-    /* Custom cosmic colors */
-    --cosmic-blue: 225 80% 60%;
-    --cosmic-pink: 320 100% 60%;
-    --cosmic-glow: 280 100% 70%;
-    /* Gradients - Purple to Pink */
-    --gradient-cosmic: linear-gradient(135deg, hsl(280 100% 65%), hsl(320 100% 60%));
-    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(280 100% 65% / 0.3), transparent 70%);
+    
+    /* Gradients - Primary to Accent (keeps H2 gradient) */
+    --gradient-cosmic: linear-gradient(135deg, hsl(9 100% 50%), hsl(72 96% 51%));
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(9 100% 50% / 0.3), transparent 70%);
+    
     /* Shadows */
-    --shadow-cosmic: 0 0 40px hsl(280 100% 65% / 0.4), 0 0 80px hsl(320 100% 60% / 0.2);
-    --shadow-glow: 0 0 20px hsl(280 100% 65% / 0.5);
+    --shadow-cosmic: 0 0 40px hsl(9 100% 50% / 0.4), 0 0 80px hsl(72 96% 51% / 0.2);
+    --shadow-glow: 0 0 20px hsl(9 100% 50% / 0.5);
+    
     /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    --sidebar-background: 0 0% 5%;
+    
+    /* Sidebar */
+    --sidebar-background: 195 96% 8%;
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 280 100% 65%;
+    --sidebar-primary: 9 100% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent: 195 96% 15%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 280 100% 65%;
+    --sidebar-border: 198 14% 36%;
+    --sidebar-ring: 9 100% 50%;
   }
 
   .dark {
-    --background: 0 0% 0%;
+    --background: 195 96% 11%;
     --foreground: 0 0% 100%;
-  }
-}
-
-@layer utilities {
-  .text-cosmic-gradient {
-    @apply bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent;
-  }
-
-  .glow-cosmic {
-    text-shadow: 0 0 20px hsl(var(--cosmic-blue) / 0.5),
-      0 0 40px hsl(var(--cosmic-pink) / 0.3);
-  }
-
-  .border-cosmic {
-    border-image: linear-gradient(135deg, hsl(var(--cosmic-blue)), hsl(var(--cosmic-pink))) 1;
   }
 }
 
@@ -110,39 +115,81 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: Telegraf, Arial, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background-image: radial-gradient(circle at 20% 20%, rgba(64, 93, 230, 0.15), transparent 25%),
       radial-gradient(circle at 80% 0%, rgba(255, 0, 128, 0.1), transparent 35%);
     background-attachment: fixed;
   }
 
   p {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 1.125rem;
     line-height: 1.75rem;
+    color: hsl(var(--foreground) / 0.8);
   }
+  
   h1 {
+    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 2.25rem;
     line-height: 2.5rem;
+    font-weight: 700;
+    color: hsl(var(--foreground));
   }
+  
   h2 {
+    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 1.875rem;
     line-height: 2.25rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #a855f7, #ec4899);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
+  
   h3 {
+    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 1.5rem;
     line-height: 2rem;
+    font-weight: 600;
+    color: hsl(var(--foreground));
+  }
+  
+  h4, h5, h6 {
+    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 600;
+    color: hsl(var(--foreground));
   }
 }
 
-
 @layer utilities {
-  .text-cosmic-gradient {
-    background-image: linear-gradient(120deg, hsl(60, 40%, 65%), hsl(85, 35%, 45%), hsl(45, 50%, 65%));
+  /* Unified title gradient - consistent across all sections */
+  .title-gradient {
+    background: linear-gradient(to right, #a855f7, #ec4899);
     background-clip: text;
     -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Legacy support - maps to new unified class */
+  .text-cosmic-gradient {
+    background: linear-gradient(to right, #a855f7, #ec4899);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .glow-cosmic {
-    text-shadow: 0 8px 30px rgba(103, 148, 90, 0.35);
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.5),
+      0 0 40px hsl(var(--accent) / 0.3);
+  }
+
+  .border-cosmic {
+    border-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent))) 1;
+  }
+  
+  /* Ensure text visibility - override Tailwind muted-foreground */
+  .text-muted-foreground {
+    color: rgba(255, 255, 255, 0.8) !important;
   }
 }

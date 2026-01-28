@@ -1,13 +1,21 @@
 .section {
   position: relative;
   padding: 4rem 1rem;
-  margin-bottom: 6rem;
+  overflow: hidden;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/nephop_2082_milanoir_events.avif") center/cover no-repeat;
+  opacity: 0.3;
+  z-index: -2;
 }
 
 @media (min-width: 768px) {
   .section {
     padding: 5rem 1rem;
-    margin-bottom: 8rem;
   }
 }
 
@@ -163,8 +171,8 @@
 .submitBtn {
   height: 56px;
   padding: 0 2rem;
-  background: linear-gradient(135deg, #3b82f6, #2563eb);
-  color: white;
+  background: hsl(var(--clarity-blue));
+  color: hsl(var(--background));
   border: none;
   border-radius: 0.75rem;
   font-size: 1rem;
@@ -179,8 +187,8 @@
 }
 
 .submitBtn:hover:not(:disabled) {
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
-  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+  background: hsl(var(--clarity-blue) / 0.9);
+  box-shadow: 0 10px 30px hsl(var(--clarity-blue) / 0.3);
   transform: translateY(-2px);
 }
 

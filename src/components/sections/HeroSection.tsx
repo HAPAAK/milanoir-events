@@ -20,11 +20,9 @@ const HeroSection = () => {
       {/* Main content */}
       <div className={styles.content}>
         <div className={styles.textContainer}>
-          <h1 className={styles.title}>
-            <span style={{ background: "linear-gradient(to right, #a855f7, #ec4899)", backgroundClip: "text", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-              {messages.hero.title}
-            </span>
-          </h1>
+          <h2 className={styles.title}>
+            <span className={styles.titleGradient}>{messages.hero.title}</span>
+          </h2>
           <p className={styles.subtitle}>
             {messages.hero.subtitle}
           </p>

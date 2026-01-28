@@ -1,224 +1,219 @@
 {
-  "metadata": {
-    "title": "Milanoir Events",
-    "description": "Luxury concert and live experience designers."
-  },
-  "navigation": {
-    "links": {
-      "home": "Inicio",
-      "about": "About",
-      "vision": "Vision",
-      "features": "Features",
-      "artists": "Artistas",
-      "waitlist": "Waitlist",
-      "contact": "Contact"
+    "metadata": {
+      "title": "Milanoir Events",
+      "description": "Diseñadores de conciertos de lujo y experiencias en vivo."
     },
-    "logoAlt": "Milanoir Events",
-    "toggleMenuAria": "Toggle menu",
-    "locale": {
-      "label": "Language",
-      "options": {
-        "en": "EN",
-        "es": "ES"
-      }
-    }
-  },
-  "hero": {
-    "title": "Milanoir Events",
-    "subtitle": "Premier Event Production for Artists and Performers",
-    "cta": "Join the Waitlist"
-  },
-  "about": {
-    "title": "About Milanoir Events",
-    "body": "Milanoir Events is a luxury event management collective specializing in concerts, experiential entertainment, and bespoke cultural productions. We curate experiences that transcend ordinary entertainment, choreographing moments of pure magic that resonate long after the final encore."
-  },
-  "vision": {
-    "title": "Our Vision",
-    "body": "We believe live events are where an artist's vision becomes reality. Too often, that vision is compromised by poor sound, lighting, or logistics. Milanoir exists to change that narrative. We are a full-service production and management studio devoted to crafting flawless, powerful, and unforgettable experiences for artists and audiences alike."
-  },
-  "artists": {
-    "title": "Artistas Destacados",
-    "subtitle": "Conoce las voces que moldean el futuro de la música",
-    "featured": [
-      {
-        "name": "Mr. D",
-        "realName": "Sandip Bista",
-        "genre": "Rap / Hip-Hop",
-        "bio": "Desde las calles de Hetauda hasta los escenarios de Nepal y más allá, Mr. D es una fuerza lírica que combina emoción cruda con narrativa afilada. Sus canciones como Gobar Lyath y Bandai Cha Nepal hablan verdad al poder, convirtiéndolo en una voz para los no escuchados y un rebelde con ritmo.",
-        "image": "/mr_d.jpeg"
+    "navigation": {
+      "links": {
+        "home": "Inicio",
+        "artists": "Artistas",
+        "waitlist": "Lista de espera",
+        "contact": "Contacto"
       },
-      {
-        "name": "Sacar aka Lil Buddha",
-        "realName": "Saakar Adhikari",
-        "genre": "Hip-Hop / Rap",
-        "bio": "Nacido en Katmandú y radicado en Sídney, Lil Buddha es un fenómeno del rap bilingüe conocido por sus freestyles ardientes y narrativa auténtica. Su música une culturas y continentes, entregando narrativas poderosas que resuenan con audiencias en todo el mundo.",
-        "image": "/sacar.jpeg"
-      }
-    ],
-    "upcoming": {
-      "title": "Artista Próximo",
-      "genre": "Experimental / Soulful Rap",
-      "bio": "Hay una presencia que no grita—resuena. Una voz que se siente como el crepúsculo y el amanecer chocando. Cuando entra, la energía cambia. No lo encontrarás persiguiendo el centro de atención, pero cuando cae el ritmo, lo encuentra. Críptico. Cósmico. Calmo. Y sin embargo, inolvidable.",
-      "image": "/upcoming_surprise.jpeg"
-    }
-  },
-  "features": {
-    "title": "What Makes Us Unique",
-    "subtitle": "Every event is a masterpiece, crafted with passion, precision, and an unwavering commitment to excellence.",
-    "items": {
-      "premiumEntertainment": {
-        "title": "Premium Entertainment",
-        "description": "World-class concerts and live performances featuring internationally acclaimed artists and emerging talents."
-      },
-      "exclusiveExperiences": {
-        "title": "Exclusive Experiences",
-        "description": "Intimate gatherings and large-scale festivals designed to create unforgettable memories for every guest."
-      },
-      "cuttingEdgeProduction": {
-        "title": "Cutting-Edge Production",
-        "description": "State-of-the-art sound, lighting, and visual technology that transforms every event into a spectacle."
-      },
-      "curatedEvents": {
-        "title": "Curated Events",
-        "description": "Carefully selected lineup of concerts, shows, and cultural experiences across multiple venues."
-      },
-      "globalReach": {
-        "title": "Global Reach",
-        "description": "Bringing international acts to local stages and creating connections through the universal language of music."
-      },
-      "luxuryTouch": {
-        "title": "Luxury Touch",
-        "description": "Every detail crafted with precision, ensuring premium hospitality from pre-show moments to encore finales."
-      }
-    }
-  },
-  "waitlist": {
-    "title": "Ready to experience the magic?",
-    "subtitle": "Join our waitlist for the inaugural season. Be the first to secure tickets, unlock VIP experiences, and receive curated stories from backstage.",
-    "emailPlaceholder": "Enter your email",
-    "submit": {
-      "joined": "✓ Joined!",
-      "loading": "Joining...",
-      "cta": "Join Now"
-    },
-    "formInfo": "We will only email you about upcoming events and special offers.",
-    "perks": [
-      "Priority ticket access and private invites",
-      "Behind-the-scenes content drops",
-      "Exclusive partner offers and experiences"
-    ],
-    "validation": {
-      "emailRequired": "Email is required",
-      "emailInvalid": "Please enter a valid email"
-    },
-    "toast": {
-      "invalid": {
-        "title": "Please check your input",
-        "description": "There are errors in the form"
-      },
-      "success": {
-        "title": "Message sent! 🚀",
-        "description": "You will be the first to know about upcoming events."
-      },
-      "error": {
-        "title": "Something went wrong",
-        "fallback": "Please try again in a moment."
-      },
-      "submitErrorFallback": "Unable to submit the form right now."
-    }
-  },
-  "contact": {
-    "title": "Let's Create Something Extraordinary",
-    "subtitle": "Have a vision? Let's bring it to life together. Reach out to discuss your next big event.",
-    "labels": {
-      "fullName": "Full Name",
-      "email": "Email Address",
-      "message": "Message",
-      "optional": "(Optional)"
-    },
-    "placeholders": {
-      "name": "Your name",
-      "email": "your@email.com",
-      "message": "Tell us about your vision..."
-    },
-    "submit": {
-      "sent": "Message Sent!",
-      "loading": "Sending...",
-      "cta": "Send Message"
-    },
-    "validation": {
-      "nameRequired": "Name is required",
-      "emailRequired": "Email is required",
-      "emailInvalid": "Please enter a valid email"
-    },
-    "toast": {
-      "invalid": {
-        "title": "Please check your input",
-        "description": "There are errors in the form"
-      },
-      "success": {
-        "title": "Message sent! 🚀",
-        "description": "We'll get back to you soon."
-      },
-      "error": {
-        "title": "Something went wrong",
-        "fallback": "Please try again in a moment."
-      },
-      "copied": {
-        "title": "Copied!",
-        "descriptionSuffix": "copied to clipboard"
-      },
-      "submitErrorFallback": "Unable to submit the form right now."
-    },
-    "info": {
-      "email": {
-        "title": "Email",
-        "details": "info@milanoir-events.com"
-      },
-      "phone": {
-        "title": "Phone",
-        "details": "+44 7887772745"
-      },
-      "location": {
-        "title": "Location",
-        "details": "Island Business Centre, 202, SE18 6PF, London"
-      }
-    }
-  },
-  "footer": {
-    "sectionsOrder": ["company"],
-    "sections": {
-      "company": {
-        "title": "Company",
-        "links": {
-          "about": "About us",
-          "vision": "Our vision",
-          "events": "Events",
-          "contact": "Contact us"
+      "logoAlt": "Milanoir Events",
+      "toggleMenuAria": "Alternar menú",
+      "locale": {
+        "label": "Idioma",
+        "options": {
+          "en": "EN",
+          "es": "ES"
         }
       }
     },
-    "copyrightSuffix": "Milanoir Events. All rights reserved.",
-    "hashtags": [
-      "#MilanoirEvents",
-      "#TheBeginningOfInfinity",
-      "#LuxuryEvents",
-      "#GlobalStage"
-    ],
-    "social": {
-      "instagram": "Instagram",
-      "facebook": "Facebook",
-      "twitter": "Twitter"
+    "hero": {
+      "title": "Milanoir Events",
+      "subtitle": "Producción de eventos de primer nivel para artistas y destacados intérpretes",
+      "cta": "Únete a la lista de espera"
     },
-    "locale": {
-      "label": "Language",
-      "options": {
-        "en": "English",
-        "es": "Español"
+    "about": {
+      "title": "Sobre Milanoir Events",
+      "body": "Milanoir Events es un colectivo de gestión de eventos de lujo especializado en conciertos, entretenimiento experiencial y producciones culturales a medida. Curamos experiencias que trascienden el entretenimiento ordinario, coreografiando momentos de pura magia que resuenan mucho después del último bis."
+    },
+    "vision": {
+      "title": "Nuestra Visión",
+      "body": "Creemos que los eventos en vivo son el lugar donde la visión de un artista se hace realidad. Con demasiada frecuencia, esa visión se ve comprometida por un sonido, una iluminación o una logística deficientes. Milanoir existe para cambiar esa narrativa. Somos un estudio de producción y gestión integral dedicado a crear experiencias impecables, poderosas e inolvidables tanto para los artistas como para el público."
+    },
+    "artists": {
+      "title": "Artistas Destacados",
+      "subtitle": "Conoce a los artistas que electrizarán el escenario en esta fiesta de víspera de Año Nuevo nepalí",
+      "featured": [
+        {
+          "name": "Mr. D",
+          "genre": "Rap / Hip-Hop",
+          "bio": "Desde las calles de Hetauda hasta los escenarios de Nepal y más allá, Mr. D es una fuerza lírica que combina la emoción cruda con una narrativa afilada. Sus temas como 'Gobar Lyath' y 'Bandai Cha Nepal' dicen la verdad al poder, convirtiéndolo en una voz para los que no tienen voz y en un rebelde con ritmo.",
+          "image": "/mr_d.jpeg"
+        },
+        {
+          "name": "Sacar aka Lil Buddha",
+          "genre": "Hip-Hop / Rap",
+          "bio": "Nacido en Katmandú y radicado en Sídney, Lil Buddha es un fenómeno del rap bilingüe conocido por sus intensos estilos libres y su narrativa auténtica. Su música tiende puentes entre culturas y continentes, entregando narrativas poderosas que resuenan en audiencias de todo el mundo.",
+          "image": "/sacar.jpeg"
+        }
+      ],
+      "upcoming": {
+        "title": "Próximo Artista",
+        "genre": "Rap Experimental / Soulful",
+        "bio": "Hay una presencia que no grita, sino que resuena. Una voz que se siente como el choque entre el anochecer y el amanecer. Cuando él entra, la energía cambia. No lo encontrarás persiguiendo el reflector, pero cuando el ritmo cae, el reflector lo encuentra a él. Críptico. Cósmico. Calmo. Y, sin embargo, inolvidable.",
+        "image": "/upcoming_surprise.jpeg"
       }
+    },
+    "features": {
+      "title": "Lo que nos hace únicos",
+      "subtitle": "Cada evento es una obra maestra, creada con pasión, precisión y un compromiso inquebrantable con la excelencia.",
+      "items": {
+        "premiumEntertainment": {
+          "title": "Entretenimiento Premium",
+          "description": "Conciertos de clase mundial y actuaciones en vivo con artistas de renombre internacional y talentos emergentes."
+        },
+        "exclusiveExperiences": {
+          "title": "Experiencias Exclusivas",
+          "description": "Encuentros íntimos y festivales a gran escala diseñados para crear recuerdos inolvidables para cada invitado."
+        },
+        "cuttingEdgeProduction": {
+          "title": "Producción de Vanguardia",
+          "description": "Tecnología visual, de iluminación y de sonido de última generación que transforma cada evento en un espectáculo."
+        },
+        "curatedEvents": {
+          "title": "Eventos Curados",
+          "description": "Selección cuidadosa de conciertos, espectáculos y experiencias culturales en múltiples sedes."
+        },
+        "globalReach": {
+          "title": "Alcance Global",
+          "description": "Llevando actos internacionales a escenarios locales y creando conexiones a través del lenguaje universal de la música."
+        },
+        "luxuryTouch": {
+          "title": "Toque de Lujo",
+          "description": "Cada detalle elaborado con precisión, garantizando una hospitalidad de primer nivel desde los momentos previos al espectáculo hasta los bises finales."
+        }
+      }
+    },
+    "waitlist": {
+      "title": "¿Listo para experimentar la magia?",
+      "subtitle": "Únete a nuestra lista de espera para la temporada inaugural. Sé el primero en asegurar boletos, desbloquear experiencias VIP y recibir historias exclusivas desde el backstage.",
+      "emailPlaceholder": "Ingresa tu correo electrónico",
+      "submit": {
+        "joined": "✓ ¡Te has unido!",
+        "loading": "Uniéndote...",
+        "cta": "Únete ahora"
+      },
+      "formInfo": "Solo te enviaremos correos electrónicos sobre próximos eventos y ofertas especiales.",
+      "perks": [
+        "Acceso prioritario a boletos e invitaciones privadas",
+        "Contenido exclusivo de detrás de escena",
+        "Ofertas y experiencias exclusivas de socios"
+      ],
+      "validation": {
+        "emailRequired": "El correo electrónico es obligatorio",
+        "emailInvalid": "Por favor, ingresa un correo electrónico válido"
+      },
+      "toast": {
+        "invalid": {
+          "title": "Por favor, verifica los datos",
+          "description": "Hay errores en el formulario"
+        },
+        "success": {
+          "title": "¡Mensaje enviado! 🚀",
+          "description": "Serás el primero en enterarte de los próximos eventos."
+        },
+        "error": {
+          "title": "Algo salió mal",
+          "fallback": "Por favor, inténtalo de nuevo en un momento."
+        },
+        "submitErrorFallback": "No se puede enviar el formulario en este momento."
+      }
+    },
+    "contact": {
+      "title": "Creemos algo extraordinario",
+      "subtitle": "¿Tienes una visión? Hagámosla realidad juntos. Contáctanos para hablar sobre tu próximo gran evento.",
+      "labels": {
+        "fullName": "Nombre completo",
+        "email": "Correo electrónico",
+        "message": "Mensaje",
+        "optional": "(Opcional)"
+      },
+      "placeholders": {
+        "name": "Tu nombre",
+        "email": "tu@correo.com",
+        "message": "Cuéntanos sobre tu visión..."
+      },
+      "submit": {
+        "sent": "¡Mensaje enviado!",
+        "loading": "Enviando...",
+        "cta": "Enviar mensaje"
+      },
+      "validation": {
+        "nameRequired": "El nombre es obligatorio",
+        "emailRequired": "El correo electrónico es obligatorio",
+        "emailInvalid": "Por favor, ingresa un correo electrónico válido"
+      },
+      "toast": {
+        "invalid": {
+          "title": "Por favor, verifica los datos",
+          "description": "Hay errores en el formulario"
+        },
+        "success": {
+          "title": "¡Mensaje enviado! 🚀",
+          "description": "Nos pondremos en contacto contigo pronto."
+        },
+        "error": {
+          "title": "Algo salió mal",
+          "fallback": "Por favor, inténtalo de nuevo en un momento."
+        },
+        "copied": {
+          "title": "¡Copiado!",
+          "descriptionSuffix": "copiado al portapapeles"
+        },
+        "submitErrorFallback": "No se puede enviar el formulario en este momento."
+      },
+      "info": {
+        "email": {
+          "title": "Correo electrónico",
+          "details": "info@milanoir-events.com"
+        },
+        "phone": {
+          "title": "Teléfono",
+          "details": "+44 7887772745"
+        },
+        "location": {
+          "title": "Ubicación",
+          "details": "Island Business Centre, 202, SE18 6PF, Londres"
+        }
+      }
+    },
+    "footer": {
+      "sectionsOrder": ["company"],
+      "sections": {
+        "company": {
+          "title": "Compañía",
+          "links": {
+            "about": "Sobre nosotros",
+            "vision": "Nuestra visión",
+            "events": "Eventos",
+            "contact": "Contáctanos"
+          }
+        }
+      },
+      "copyrightSuffix": "Milanoir Events. Todos los derechos reservados.",
+      "hashtags": [
+        "#MilanoirEvents",
+        "#ElComienzoDelInfinito",
+        "#EventosDeLujo",
+        "#EscenarioGlobal"
+      ],
+      "social": {
+        "instagram": "Instagram",
+        "facebook": "Facebook",
+        "twitter": "Twitter"
+      },
+      "locale": {
+        "label": "Idioma",
+        "options": {
+          "en": "English",
+          "es": "Español"
+        }
+      }
+    },
+    "loader": {
+      "text": "milanoir"
     }
-  },
-  "loader": {
-    "text": "milanoir"
   }
-}

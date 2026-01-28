@@ -6,9 +6,6 @@
   "navigation": {
     "links": {
       "home": "Home",
-      "about": "About",
-      "vision": "Vision",
-      "features": "Features",
       "artists": "Artists",
       "waitlist": "Waitlist",
       "contact": "Contact"
@@ -38,18 +35,16 @@
   },
   "artists": {
     "title": "Featured Artists",
-    "subtitle": "Meet the voices shaping the future of music",
+    "subtitle": "Meet the artists electrifying the stage at this Nepali New Year's Eve Party",
     "featured": [
       {
         "name": "Mr. D",
-        "realName": "Sandip Bista",
         "genre": "Rap / Hip-Hop",
         "bio": "From the streets of Hetauda to stages across Nepal and beyond, Mr. D is a lyrical force who blends raw emotion with razor-sharp storytelling. His tracks like Gobar Lyath and Bandai Cha Nepal speak truth to power, making him a voice for the unheard and a rebel with rhythm.",
         "image": "/mr_d.jpeg"
       },
       {
         "name": "Sacar aka Lil Buddha",
-        "realName": "Saakar Adhikari",
         "genre": "Hip-Hop / Rap",
         "bio": "Kathmandu-born and Sydney-based, Lil Buddha is a bilingual rap phenom known for his fiery freestyles and authentic storytelling. His music bridges cultures and continents, delivering powerful narratives that resonate with audiences worldwide.",
         "image": "/sacar.jpeg"
@@ -214,7 +209,8 @@
       "label": "Language",
       "options": {
         "en": "English",
-        "es": "Español"
+        "es": "Español",
+        "nepali": "Nepali"
       }
     }
   },

@@ -8,10 +8,10 @@
 }
 
 .nav.scrolled {
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: hsl(var(--background) / 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px -1px hsl(var(--background) / 0.5);
 }
 
 .container {
@@ -38,10 +38,7 @@
 .navLink {
   font-size: 0.875rem;
   font-weight: 700;
-  background: linear-gradient(to right, #a855f7, #ec4899);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: white;
   text-decoration: none;
   transition: all 0.2s ease;
   position: relative;
@@ -54,7 +51,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(to right, #a855f7, #ec4899);
+  background: hsl(var(--primary));
   transition: width 0.3s ease;
 }
 
@@ -109,7 +106,7 @@
 
 .mobileMenu {
   display: none;
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: hsl(var(--background) / 0.95);
   backdrop-filter: blur(10px);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1.5rem;
@@ -135,10 +132,7 @@
 .mobileLink {
   font-size: 1rem;
   font-weight: 700;
-  background: linear-gradient(to right, #a855f7, #ec4899);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: white;
   text-decoration: none;
   transition: all 0.2s ease;
   display: block;
@@ -153,7 +147,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(to right, #a855f7, #ec4899);
+  background: hsl(var(--primary));
   transition: width 0.3s ease;
 }
 

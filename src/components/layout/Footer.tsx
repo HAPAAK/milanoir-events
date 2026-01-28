@@ -73,7 +73,7 @@ export default function Footer() {
                 >
                   {locales.map((option) => (
                     <option key={option} value={option}>
-                      {messages.footer.locale.options[option]}
+                      {messages.footer.locale.options[option as keyof typeof messages.footer.locale.options] || option}
                     </option>
                   ))}
                 </select>

@@ -43,9 +43,15 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: url("/nephop_2081_milanoir_events.avif") center/cover no-repeat;
+  background: url("/nephop_2082_milanoir_events_ph.jpeg") center/cover no-repeat;
   filter: brightness(0.7) saturate(1.05);
   z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .background::after {
+    background-image: url("/nephop_2082_milanoir_events.jpeg");
+  }
 }
 
 /* Music waves background (layered subtle waves using gradients) */
@@ -161,6 +167,13 @@
   animation: fadeInUp 0.8s ease-out;
 }
 
+.titleGradient {
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @media (min-width: 768px) {
   .title {
     font-size: 4.5rem;
@@ -175,10 +188,12 @@
 
 .subtitle {
   font-size: 1.125rem;
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
-  color: #3b82f6;
+  color: rgba(255, 255, 255, 0.8);
   animation: fadeInUp 0.8s ease-out 0.2s both;
+  font-weight: 400;
+  line-height: 1.75rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 @media (min-width: 768px) {
@@ -193,25 +208,27 @@
 }
 
 .button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1.5rem 2rem;
-  font-size: 1.125rem;
-  font-weight: 600;
-  background-color: #3b82f6;
-  color: white;
+  height: 56px;
+  padding: 0 2rem;
+  background: hsl(var(--clarity-blue));
+  color: hsl(var(--background));
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  white-space: nowrap;
 }
 
-.button:hover {
-  background-color: rgba(59, 130, 246, 0.9);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-  transform: scale(1.05);
+.button:hover:not(:disabled) {
+  background: hsl(var(--clarity-blue) / 0.9);
+  box-shadow: 0 10px 30px hsl(var(--clarity-blue) / 0.3);
+  transform: translateY(-2px);
 }
 
 .button:disabled {

@@ -1,13 +1,11 @@
 .section {
   position: relative;
   padding: 4rem 1rem;
-  margin-bottom: 5rem;
 }
 
 @media (min-width: 768px) {
   .section {
     padding: 5rem 1rem;
-    margin-bottom: 6rem;
   }
 }
 
