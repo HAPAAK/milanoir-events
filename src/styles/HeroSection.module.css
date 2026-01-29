@@ -164,6 +164,7 @@
   font-size: 3rem;
   font-weight: bold;
   letter-spacing: -0.02em;
+  line-height: 1.2;
   animation: fadeInUp 0.8s ease-out;
 }
 
@@ -172,17 +173,21 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  display: inline-block;
+  word-wrap: break-word;
 }
 
 @media (min-width: 768px) {
   .title {
     font-size: 4.5rem;
+    line-height: 1.15;
   }
 }
 
 @media (min-width: 1024px) {
   .title {
     font-size: 5rem;
+    line-height: 1.1;
   }
 }
 

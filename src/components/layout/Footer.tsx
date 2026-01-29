@@ -8,6 +8,15 @@ export default function Footer() {
   const { locale, locales, setLocale } = useI18n();
   const sections = messages.footer.sections as Record<string, { title: string; links: Record<string, string> }>;
   const sectionOrder = messages.footer.sectionsOrder as string[];
+  
+  // Map footer link keys to their corresponding section IDs
+  const linkToSectionMap: Record<string, string> = {
+    "about": "#about",
+    "vision": "#vision",
+    "features": "#features",
+    "contact": "#contact",
+  };
+  
   const footerLinks = sectionOrder
     .filter((key) => sections[key] && sections[key].links)
     .map((key) => {
@@ -16,14 +25,12 @@ export default function Footer() {
         .map(([linkKey, label]) => ({
           key: linkKey,
           label,
-          href: linkKey === "contact" ? "#contact" : "#",
+          href: linkToSectionMap[linkKey] || "#",
         }));
       return { key, title: section.title, links };
     });
   const socialLinks = [
     { label: messages.footer.social.instagram, icon: Instagram, href: "https://www.instagram.com/milanoirevents/#" },
-    { label: messages.footer.social.facebook, icon: Facebook, href: "https://facebook.com/milanoirevents" },
-    { label: messages.footer.social.twitter, icon: Twitter, href: "https://twitter.com/milanoirevents" },
   ];
   const hashtags = messages.footer.hashtags;
   return (
@@ -42,7 +49,16 @@ export default function Footer() {
                     <li key={link.key}>
                       <a
                         href={link.href}
-                        className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                        onClick={(e) => {
+                          if (link.href.startsWith("#")) {
+                            e.preventDefault();
+                            const target = document.querySelector(link.href);
+                            if (target) {
+                              target.scrollIntoView({ behavior: "smooth" });
+                            }
+                          }
+                        }}
+                        className="text-muted-foreground hover:text-primary transition-colors text-sm cursor-pointer"
                       >
                         {link.label}
                       </a>

@@ -38,6 +38,12 @@
     "subtitle": "Meet the artists electrifying the stage at this Nepali New Year's Eve Party",
     "featured": [
       {
+        "name": "Upcoming Artist",
+        "genre": "Experimental / Soulful Rap",
+        "bio": "There's a presence that doesn't shout—it resonates. A voice that feels like dusk and dawn colliding. When he steps in, the energy shifts. You won't find him chasing the spotlight, but when the beat drops, it finds him. Cryptic. Cosmic. Calm. And yet, unforgettable.",
+        "image": "/upcoming_surprise.jpeg"
+      },
+      {
         "name": "Mr. D",
         "genre": "Rap / Hip-Hop",
         "bio": "From the streets of Hetauda to stages across Nepal and beyond, Mr. D is a lyrical force who blends raw emotion with razor-sharp storytelling. His tracks like Gobar Lyath and Bandai Cha Nepal speak truth to power, making him a voice for the unheard and a rebel with rhythm.",
@@ -49,13 +55,7 @@
         "bio": "Kathmandu-born and Sydney-based, Lil Buddha is a bilingual rap phenom known for his fiery freestyles and authentic storytelling. His music bridges cultures and continents, delivering powerful narratives that resonate with audiences worldwide.",
         "image": "/sacar.jpeg"
       }
-    ],
-    "upcoming": {
-      "title": "Upcoming Artist",
-      "genre": "Experimental / Soulful Rap",
-      "bio": "There's a presence that doesn't shout—it resonates. A voice that feels like dusk and dawn colliding. When he steps in, the energy shifts. You won't find him chasing the spotlight, but when the beat drops, it finds him. Cryptic. Cosmic. Calm. And yet, unforgettable.",
-      "image": "/upcoming_surprise.jpeg"
-    }
+    ]
   },
   "features": {
     "title": "What Makes Us Unique",
@@ -188,7 +188,7 @@
         "links": {
           "about": "About us",
           "vision": "Our vision",
-          "events": "Events",
+          "features": "Features",
           "contact": "Contact us"
         }
       }
@@ -201,9 +201,7 @@
       "#GlobalStage"
     ],
     "social": {
-      "instagram": "Instagram",
-      "facebook": "Facebook",
-      "twitter": "Twitter"
+      "instagram": "Instagram"
     },
     "locale": {
       "label": "Language",

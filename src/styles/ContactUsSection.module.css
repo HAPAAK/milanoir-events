@@ -63,11 +63,13 @@
 .title {
   font-size: 2.25rem;
   font-weight: bold;
+  line-height: 1.3;
 }
 
 @media (min-width: 768px) {
   .title {
     font-size: 3.75rem;
+    line-height: 1.2;
   }
 }
 
@@ -76,6 +78,8 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  display: inline-block;
+  word-wrap: break-word;
 }
 
 .subtitle {

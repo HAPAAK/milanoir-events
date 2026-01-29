@@ -211,6 +211,13 @@ const ContactUsSection = () => {
                   <div
                     key={info.key}
                     className={styles.contactCard}
+                    onClick={() => {
+                      if (info.link) {
+                        window.location.href = info.link;
+                      } else {
+                        handleCopyToClipboard(info.details, info.title);
+                      }
+                    }}
                   >
                     <div className={styles.contactCardGradient} />
 
@@ -220,19 +227,9 @@ const ContactUsSection = () => {
                       </div>
                       <div className={styles.contactInfo}>
                         <h4 className={styles.contactTitle}>{info.title}</h4>
-                        {info.link ? (
-                          <a href={info.link} className={styles.contactDetails}>
-                            {info.details}
-                          </a>
-                        ) : (
-                          <p
-                            className={styles.contactDetails}
-                            onClick={() => handleCopyToClipboard(info.details, info.title)}
-                            style={{ cursor: "pointer" }}
-                          >
-                            {info.details}
-                          </p>
-                        )}
+                        <p className={styles.contactDetails}>
+                          {info.details}
+                        </p>
                       </div>
                     </div>
                   </div>
