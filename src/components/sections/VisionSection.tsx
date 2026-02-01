@@ -5,7 +5,7 @@ import { useMessages } from "@/i18n/I18nProvider";
 const VisionSection = () => {
   const messages = useMessages();
   return (
-    <section id="vision" className="relative px-4 pt-16 pb-20 md:pt-20 md:pb-24 bg-card/30">
+    <section id="vision" className="relative px-4 py-16 md:py-20 bg-card/30">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12 md:mb-16 space-y-6 animate-fade-in-up">
           <h2 className="text-4xl md:text-6xl font-bold">

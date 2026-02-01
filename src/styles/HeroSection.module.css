@@ -2,244 +2,290 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-  overflow: hidden;
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 4rem;
-  background: linear-gradient(-45deg, hsl(var(--background)), hsl(var(--primary) / 0.2), hsl(var(--background)), hsl(var(--primary) / 0.2));
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
+  overflow: hidden;
+  padding: 4rem 1rem;
 }
 
 @media (min-width: 768px) {
   .hero {
-    padding-top: 5rem;
+    padding: 5rem 2rem;
   }
 }
 
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
+/* Background Image covering the whole section */
 .background {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: transparent;
-  overflow: hidden;
 }
 
 .background::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("/nephop_2082_milanoir_events_ph.jpeg") center/cover no-repeat;
-  filter: brightness(0.7) saturate(1.05);
+  background: url("/nephop_2082_milanoir_events.jpeg") center/cover no-repeat;
+  filter: brightness(0.4) saturate(1.1); /* Darken for readability */
   z-index: 1;
+  animation: slowZoom 20s ease-in-out infinite alternate;
 }
 
-@media (min-width: 768px) {
-  .background::after {
-    background-image: url("/nephop_2082_milanoir_events.jpeg");
-  }
-}
-
-/* Music waves background (layered subtle waves using gradients) */
-.musicWaves {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.musicWaves::before,
-.musicWaves::after {
-  content: "";
-  position: absolute;
-  left: -25%;
-  width: 150%;
-  height: 40%;
-  bottom: -5%;
-  background-repeat: no-repeat;
-  opacity: 0.6;
-  transform: translate3d(0,0,0);
-  mix-blend-mode: screen;
-}
-
-.musicWaves::before {
-  background: radial-gradient(ellipse at center, hsl(var(--secondary) / 0.1), hsl(var(--accent) / 0.02) 55%, transparent 60%);
-  animation: waveMove 14s linear infinite;
-}
-
-.musicWaves::after {
-  bottom: -20%;
-  height: 60%;
-  background: linear-gradient(90deg, hsl(var(--secondary) / 0.06), hsl(var(--accent) / 0.04));
-  opacity: 0.5;
-  animation: waveMove 22s linear infinite reverse;
-}
-
-@keyframes waveMove {
-  from { transform: translateX(0); }
-  to { transform: translateX(-20%); }
-}
-
-/* Floating music note elements (spawned by JS on hover/mousemove) */
-.musicNote {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  font-size: 1.25rem;
-  color: hsl(var(--accent));
-  text-shadow: 0 6px 18px hsl(var(--secondary) / 0.5);
-  pointer-events: none;
-  animation: floatUp 1100ms cubic-bezier(.2,.9,.2,1) forwards;
-  z-index: 60;
-}
-
-@keyframes floatUp {
-  0% { opacity: 1; transform: translate(-50%, -50%) translateY(0) scale(1); }
-  60% { opacity: 0.9; transform: translate(-50%, -150%) translateY(-40px) scale(1.08) rotate(-6deg); }
-  100% { opacity: 0; transform: translate(-50%, -240%) translateY(-90px) scale(1.18) rotate(-12deg); }
-}
-
-.hero.hovering .title,
-.hero.hovering .subtitle {
-  transition: transform 0.35s ease, filter 0.35s ease;
-  transform: translateY(-6px);
+@keyframes slowZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), transparent, rgba(0, 0, 0, 0.2));
+  background: linear-gradient(to bottom, rgba(13, 14, 18, 0.6), rgba(13, 14, 18, 0.8));
   z-index: 2;
 }
 
-.content {
+.container {
   position: relative;
   z-index: 10;
+  width: 100%;
+  max-width: 1400px;
   display: flex;
   flex-direction: column;
+  gap: 3rem;
   align-items: center;
-  justify-content: center;
-  min-height: calc(100vh - 4rem);
-  padding: 2rem;
-  text-align: center;
 }
 
-@media (min-width: 768px) {
-  .content {
-    min-height: calc(100vh - 6rem);
+@media (min-width: 1024px) {
+  .container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
   }
 }
 
-.textContainer {
-  max-width: 1200px;
-  margin: 0 auto;
+/* Left Column: Action */
+.leftColumn {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .leftColumn {
+    justify-content: flex-start;
+    width: 50%;
+  }
+}
+
+.contentWrapper {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  margin-top: -2.5rem;
+  text-align: center;
+  
+  /* Glassmorphism Styles */
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 @media (min-width: 768px) {
-  .textContainer {
-    gap: 2rem;
-    margin-top: -4rem;
+  .contentWrapper {
+    padding: 3rem;
   }
 }
 
-.title {
-  font-size: 3rem;
-  font-weight: bold;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+@media (min-width: 1024px) {
+  .contentWrapper {
+    text-align: left;
+  }
+}
+
+.tourLabel {
+  font-family: var(--font-plus-jakarta), sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: -0.5rem;
   animation: fadeInUp 0.8s ease-out;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .tourLabel {
+    justify-content: flex-start;
+  }
+}
+
+.tourLocation {
+  color: hsl(var(--accent)); /* Primary/Accent Color */
+}
+
+.tourDate {
+  color: rgba(255, 255, 255, 0.9); /* Normal/White Color */
+}
+
+.title {
+  font-family: var(--font-syne), sans-serif;
+  font-weight: 800;
+  font-size: 2.5rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  animation: fadeInUp 0.8s ease-out 0.1s both;
 }
 
 .titleGradient {
-  background: var(--gradient-primary);
+  background: linear-gradient(135deg, #7AC7FF 0%, #5A4491 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: inline-block;
-  word-wrap: break-word;
 }
 
 @media (min-width: 768px) {
   .title {
-    font-size: 4.5rem;
-    line-height: 1.15;
+    font-size: 3.5rem;
   }
 }
 
 @media (min-width: 1024px) {
   .title {
-    font-size: 5rem;
-    line-height: 1.1;
+    font-size: 4.5rem;
   }
 }
 
 .subtitle {
-  font-size: 1.125rem;
+  font-family: var(--font-plus-jakarta), sans-serif;
+  font-size: 1rem;
   color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
   animation: fadeInUp 0.8s ease-out 0.2s both;
-  font-weight: 400;
-  line-height: 1.75rem;
-  max-width: 600px;
-  margin: 0 auto;
 }
 
 @media (min-width: 768px) {
   .subtitle {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
 }
 
-.buttonContainer {
-  padding-top: 1.25rem;
-  animation: fadeInUp 0.8s ease-out 0.4s both;
+.ctaWrapper {
+  margin-top: 1rem;
+  animation: fadeInUp 0.8s ease-out 0.3s both;
 }
 
-.button {
+.glowButton {
   height: 56px;
-  padding: 0 2rem;
+  padding: 0 2.5rem;
   background: hsl(var(--accent));
   color: hsl(var(--accent-foreground));
-  border: none;
-  border-radius: 0.75rem;
-  font-size: 1rem;
-  font-weight: 600;
+  border: 2px solid hsl(var(--accent));
+  border-radius: 9999px;
+  font-family: var(--font-plus-jakarta), sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
   cursor: pointer;
-  transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
+  transition: all 0.3s ease;
   white-space: nowrap;
+  text-transform: uppercase;
 }
 
-.button:hover:not(:disabled) {
+.glowButton:hover {
   background: hsl(var(--accent) / 0.9);
   box-shadow: 0 10px 30px hsl(var(--accent) / 0.3);
   transform: translateY(-2px);
 }
 
-.button:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-  transform: scale(1);
+/* Right Column: Atmosphere (Rotating Card) */
+.rightColumn {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .rightColumn {
+    width: 45%;
+    justify-content: flex-end;
+  }
+}
+
+.rotatingCard {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #000;
+}
+
+.artistImageWrapper {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.artistImageWrapper.active {
+  opacity: 1;
+}
+
+.artistImage {
+  object-fit: cover;
+}
+
+.floatingIcon {
+  position: absolute;
+  animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+  z-index: 20;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.audioToggle {
+  position: absolute;
+  bottom: -4rem;
+  right: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+
+.audioToggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
 }
 
 @keyframes fadeInUp {

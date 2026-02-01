@@ -21,8 +21,10 @@
     }
   },
   "hero": {
-    "title": "Milanoir Events",
-    "subtitle": "Premier Event Production for Artists and Performers",
+    "tourLocation": "LIVE IN LONDON •",
+    "tourDate": " NEPALI NEW YEAR EVE'S 2082",
+    "title": "The Beginning of Infinity.",
+    "subtitle": "We’re dropping the beat on New Year’s Eve with an atmosphere that breathes music. 🌌 No fluff—just pure energy and a lineup that speaks for itself.",
     "cta": "Join the Waitlist"
   },
   "about": {

@@ -20,11 +20,13 @@
         }
       }
     },
-    "hero": {
-      "title": "Milanoir Events",
-      "subtitle": "Producción de eventos de primer nivel para artistas y destacados intérpretes",
-      "cta": "Únete a la lista de espera"
-    },
+  "hero": {
+    "tourLocation": "EN VIVO EN LONDRES",
+    "tourDate": "VISPERA DE AÑO NUEVO NEPALÍ 2082",
+    "title": "El Comienzo del Infinito.",
+    "subtitle": "Producción de eventos de primer nivel para artistas y destacados intérpretes",
+    "cta": "ÚNETE A LA LISTA DE ESPERA"
+  },
     "about": {
       "title": "Sobre Milanoir Events",
       "body": "Milanoir Events es un colectivo de gestión de eventos de lujo especializado en conciertos, entretenimiento experiencial y producciones culturales a medida. Curamos experiencias que trascienden el entretenimiento ordinario, coreografiando momentos de pura magia que resuenan mucho después del último bis."

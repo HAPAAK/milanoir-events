@@ -41,12 +41,13 @@ export default function PageLoader() {
       {/* CSS for wave loader styling */}
       <style jsx>{`
         .wave-loader {
+          font-family: var(--font-playfair), serif;
           font-size: clamp(3rem, 8vw, 6rem);
-          -webkit-text-stroke: 2px hsl(75, 20%, 40%);
-          text-stroke: 2px hsl(75, 20%, 40%);
+          -webkit-text-stroke: 2px hsl(var(--secondary));
+          text-stroke: 2px hsl(var(--secondary));
           background:
-            radial-gradient(1.13em at 50% 1.6em, hsl(75, 30%, 50%) 99%, transparent 101%) calc(50% - 1.6em) 0/3.2em 100% text,
-            radial-gradient(1.13em at 50% -0.8em, transparent 99%, hsl(75, 30%, 50%) 101%) 50% .8em/3.2em 100% repeat-x text;
+            radial-gradient(1.13em at 50% 1.6em, hsl(var(--accent)) 99%, transparent 101%) calc(50% - 1.6em) 0/3.2em 100% text,
+            radial-gradient(1.13em at 50% -0.8em, transparent 99%, hsl(var(--accent)) 101%) 50% .8em/3.2em 100% repeat-x text;
           -webkit-background-clip: text;
           background-clip: text;
         }
