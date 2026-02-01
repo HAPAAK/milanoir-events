@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: center;
   padding-top: 4rem;
-  background: linear-gradient(-45deg, #1b2735, #090a0f, #1b2735, #090a0f);
+  background: linear-gradient(-45deg, hsl(var(--background)), hsl(var(--primary) / 0.2), hsl(var(--background)), hsl(var(--primary) / 0.2));
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
 }
@@ -78,14 +78,14 @@
 }
 
 .musicWaves::before {
-  background: radial-gradient(ellipse at center, rgba(168,85,247,0.10), rgba(236,72,153,0.02) 55%, transparent 60%);
+  background: radial-gradient(ellipse at center, hsl(var(--secondary) / 0.1), hsl(var(--accent) / 0.02) 55%, transparent 60%);
   animation: waveMove 14s linear infinite;
 }
 
 .musicWaves::after {
   bottom: -20%;
   height: 60%;
-  background: linear-gradient(90deg, rgba(168,85,247,0.06), rgba(236,72,153,0.04));
+  background: linear-gradient(90deg, hsl(var(--secondary) / 0.06), hsl(var(--accent) / 0.04));
   opacity: 0.5;
   animation: waveMove 22s linear infinite reverse;
 }
@@ -100,8 +100,8 @@
   position: absolute;
   transform: translate(-50%, -50%);
   font-size: 1.25rem;
-  color: #ec4899; /* pink accent */
-  text-shadow: 0 6px 18px rgba(168,85,247,0.5);
+  color: hsl(var(--accent));
+  text-shadow: 0 6px 18px hsl(var(--secondary) / 0.5);
   pointer-events: none;
   animation: floatUp 1100ms cubic-bezier(.2,.9,.2,1) forwards;
   z-index: 60;
@@ -169,7 +169,7 @@
 }
 
 .titleGradient {
-  background: linear-gradient(to right, #a855f7, #ec4899);
+  background: var(--gradient-primary);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -215,8 +215,8 @@
 .button {
   height: 56px;
   padding: 0 2rem;
-  background: hsl(var(--clarity-blue));
-  color: hsl(var(--background));
+  background: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
   border: none;
   border-radius: 0.75rem;
   font-size: 1rem;
@@ -231,8 +231,8 @@
 }
 
 .button:hover:not(:disabled) {
-  background: hsl(var(--clarity-blue) / 0.9);
-  box-shadow: 0 10px 30px hsl(var(--clarity-blue) / 0.3);
+  background: hsl(var(--accent) / 0.9);
+  box-shadow: 0 10px 30px hsl(var(--accent) / 0.3);
   transform: translateY(-2px);
 }
 

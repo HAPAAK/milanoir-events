@@ -12,9 +12,9 @@ export default function Home() {
       <HeroSection />
       <FeaturedArtistsSection />
       <AboutSection />
+      <WaitlistSection />
       <VisionSection />
       <FeaturesSection />
-      <WaitlistSection />
       <ContactUsSection />
     </div>
   );

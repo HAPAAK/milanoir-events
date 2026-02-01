@@ -44,7 +44,7 @@
 }
 
 .titleGradient {
-  background: linear-gradient(to right, #a855f7, #ec4899);
+  background: var(--gradient-primary);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

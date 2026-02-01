@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
   try {
-    const { email } = await req.json();
+    const { email, firstName, lastName } = await req.json();
 
     if (!email || typeof email !== "string") {
       return NextResponse.json({ error: "A valid email is required." }, { status: 400 });
@@ -28,7 +28,9 @@ export async function POST(req: Request) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        email: email
+        email: email,
+        first_name: firstName,
+        last_name: lastName,
       }),
     });
 

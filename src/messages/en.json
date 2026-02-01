@@ -27,7 +27,7 @@
   },
   "about": {
     "title": "About Milanoir Events",
-    "body": "Milanoir Events is a luxury event management collective specializing in concerts, experiential entertainment, and bespoke cultural productions. We curate experiences that transcend ordinary entertainment, choreographing moments of pure magic that resonate long after the final encore."
+    "body": "Milanoir Events is a event management company specializing in concerts, experiential entertainment, and bespoke cultural productions. We curate experiences that transcend ordinary entertainment, choreographing moments of pure magic that resonate long after the final encore."
   },
   "vision": {
     "title": "Our Vision",
@@ -77,10 +77,6 @@
         "title": "Curated Events",
         "description": "Carefully selected lineup of concerts, shows, and cultural experiences across multiple venues."
       },
-      "globalReach": {
-        "title": "Global Reach",
-        "description": "Bringing international acts to local stages and creating connections through the universal language of music."
-      },
       "luxuryTouch": {
         "title": "Luxury Touch",
         "description": "Every detail crafted with precision, ensuring premium hospitality from pre-show moments to encore finales."
@@ -89,7 +85,7 @@
   },
   "waitlist": {
     "title": "Ready to experience the magic?",
-    "subtitle": "Join our waitlist for the inaugural season. Be the first to secure tickets, unlock VIP experiences, and receive curated stories from backstage.",
+    "subtitle": "Join our waitlist for the inaugural season. Be the first to secure tickets, and unlock VIP experiences.",
     "emailPlaceholder": "Enter your email",
     "submit": {
       "joined": "✓ Joined!",

@@ -17,7 +17,7 @@
 .container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 1.5rem 1.5rem;
+  padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -51,7 +51,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: hsl(var(--primary));
+  background: hsl(var(--accent));
   transition: width 0.3s ease;
 }
 
@@ -83,7 +83,7 @@
   width: auto;
   background: transparent;
   object-fit: contain;
-  filter: drop-shadow(0 0 8px hsla(var(--cosmic-glow), 0.4));
+  filter: drop-shadow(0 0 8px hsl(var(--accent) / 0.4));
 }
 
 .mobileMenuButton {
@@ -109,7 +109,7 @@
   background-color: hsl(var(--background) / 0.95);
   backdrop-filter: blur(10px);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1.5rem;
+  padding: 1rem;
   animation: slideDown 0.3s ease;
 }
 
@@ -147,7 +147,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: hsl(var(--primary));
+  background: hsl(var(--accent));
   transition: width 0.3s ease;
 }
 

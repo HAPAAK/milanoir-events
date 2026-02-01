@@ -12,7 +12,6 @@ const FeaturesSection = () => {
     { icon: Users, title: messages.features.items.exclusiveExperiences.title, description: messages.features.items.exclusiveExperiences.description },
     { icon: Zap, title: messages.features.items.cuttingEdgeProduction.title, description: messages.features.items.cuttingEdgeProduction.description },
     { icon: Calendar, title: messages.features.items.curatedEvents.title, description: messages.features.items.curatedEvents.description },
-    { icon: Globe, title: messages.features.items.globalReach.title, description: messages.features.items.globalReach.description },
     { icon: Sparkles, title: messages.features.items.luxuryTouch.title, description: messages.features.items.luxuryTouch.description },
   ];
 

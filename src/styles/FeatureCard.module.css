@@ -41,9 +41,9 @@
 
 .cardBack {
   transform: rotateY(180deg);
-  background: linear-gradient(135deg, rgba(168, 85, 247, 0.2) 0%, rgba(224, 79, 240, 0.1) 100%);
-  border-color: rgba(168, 85, 247, 0.5);
-  box-shadow: 0 8px 32px rgba(168, 85, 247, 0.3), inset 0 0 20px rgba(168, 85, 247, 0.1);
+  background: linear-gradient(135deg, hsl(var(--secondary) / 0.2) 0%, hsl(var(--secondary) / 0.1) 100%);
+  border-color: hsl(var(--secondary) / 0.5);
+  box-shadow: 0 8px 32px hsl(var(--secondary) / 0.3), inset 0 0 20px hsl(var(--secondary) / 0.1);
   gap: 1rem;
 }
 
@@ -53,18 +53,18 @@
   justify-content: center;
   padding: 0.75rem;
   border-radius: 0.75rem;
-  background-color: rgba(168, 85, 247, 0.3);
+  background-color: hsl(var(--secondary) / 0.3);
   transition: all 0.3s ease;
 }
 
 .cardBack:hover .iconContainerBack {
-  background-color: rgba(168, 85, 247, 0.4);
+  background-color: hsl(var(--secondary) / 0.4);
 }
 
 .iconBack {
   width: 2rem;
   height: 2rem;
-  color: #a855f7;
+  color: hsl(var(--accent));
 }
 
 .iconContainer {
@@ -73,18 +73,18 @@
   justify-content: center;
   padding: 1rem;
   border-radius: 0.75rem;
-  background-color: rgba(168, 85, 247, 0.2);
+  background-color: hsl(var(--secondary) / 0.2);
   transition: all 0.3s ease;
 }
 
 .cardFace:hover .iconContainer {
-  background-color: rgba(168, 85, 247, 0.3);
+  background-color: hsl(var(--secondary) / 0.3);
 }
 
 .icon {
   width: 2.5rem;
   height: 2.5rem;
-  color: #a855f7;
+  color: hsl(var(--accent));
 }
 
 .title {
